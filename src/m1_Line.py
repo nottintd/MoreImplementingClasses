@@ -3,8 +3,8 @@ A simple   Line   class.
 NOTE: This is NOT rosegraphics -- it is your OWN Line class.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Tyler Nottingham.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import math
 import m1t_test_Line as m1t
@@ -15,7 +15,7 @@ import m1t_test_Line as m1t
 ########################################################################
 
 # ----------------------------------------------------------------------
-# TODO: 2. With your instructor, READ THE INSTRUCTIONS
+# DONE: 2. With your instructor, READ THE INSTRUCTIONS
 #   in file  m0_INSTRUCTIONS.txt, asking questions as needed.
 #   Once you understand the instructions, mark this TO DO as DONE.
 #
@@ -178,6 +178,9 @@ class Line(object):
     """ Represents a line segment in 2-dimensional space. """
 
     def __init__(self, start, end):
+        self.start = start.clone()
+        self.end = end.clone()
+
         """
         What comes in:
           -- self
@@ -217,7 +220,7 @@ class Line(object):
           :type end:   Point
         """
         # --------------------------------------------------------------
-        # TODO: 3.
+        # DONE: 3.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -297,7 +300,10 @@ class Line(object):
         return (self.start == line2.start) and (self.end == line2.end)
 
     def clone(self):
-        """
+        start_clone = self.start
+        end_clone = self.end
+        return Line(start_clone, end_clone)
+    """
         What comes in:
           -- self
         What goes out: Returns a new Line whose START is a clone of
@@ -324,9 +330,9 @@ class Line(object):
 
         Type hints:
           :rtype: Line
-        """
+    """
         # --------------------------------------------------------------
-        # TODO: 4.
+        # DONE: 4.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -336,7 +342,11 @@ class Line(object):
         # --------------------------------------------------------------
 
     def reverse(self):
-        """
+        temp = self.start
+        self.start = self.end
+        self.end = temp
+
+    """
         What comes in:
           -- self
         What goes out: Nothing (i.e., None).
@@ -357,9 +367,9 @@ class Line(object):
 
             line1.reverse()
             print(line1 == line2)    # Should now print: True
-        """
+    """
         # --------------------------------------------------------------
-        # TODO: 5.
+        # DONE: 5.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.

@@ -107,7 +107,7 @@ class Baby(object):
     def hour_passes(self):
         if self.number_of_hours_passed == 0:
             print("Baby", self.baby_name, "is sleeping.")
-            
+
         if self.number_of_hours_passed == 1:
             print("Baby", self.baby_name, "is awake.  Time for food")
 

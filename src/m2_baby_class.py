@@ -2,8 +2,8 @@
 A   Baby   class and methods that use the Baby class.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Tyler Nottingham.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -36,7 +36,6 @@ def main():
         mckinley.feed_baby()
         for j in range(4):
             mckinley.hour_passes()
-
 
 # ----------------------------------------------------------------------
 # TODO: 2. Implement a class called   Baby   that has a constructor and
@@ -89,13 +88,32 @@ def main():
 #          """ Brief description of what objects of the class 'are'. """
 #
 ########################################################################
+class Baby(object):
+    """Creates some baby objects"""
+
+
+    def __init__(self, baby_name):
+        self.baby_name = baby_name
+        self.number_of_hours_passed = 0
+        print("Hello Baby ", self.baby_name)
 
 
 
+    def feed_baby(self):
+        self.number_of_hours_passed = 0
+        print("Thank you for feeding Baby", self.baby_name)
 
 
+    def hour_passes(self):
+        if self.number_of_hours_passed == 0:
+            print("Baby", self.baby_name, "is sleeping.")
+            
+        if self.number_of_hours_passed == 1:
+            print("Baby", self.baby_name, "is awake.  Time for food")
 
-
+        if self.number_of_hours_passed >= 2:
+            print("Baby", self.baby_name, "is CRYING uncontrollably!  Feed the Baby!")
+        self.number_of_hours_passed = self.number_of_hours_passed + 1
 # ----------------------------------------------------------------------
 # If this module is running at the top level (as opposed to being
 # imported by another module), then call the 'main' function.
